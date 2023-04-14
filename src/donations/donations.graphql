@@ -8,7 +8,7 @@ type Donation {
   mobile: String
   team: String
   message: String
-  created: DateTime
+  createdAt: DateTime
 }
 
 input CreateDonationInput {

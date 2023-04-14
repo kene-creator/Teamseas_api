@@ -26,7 +26,7 @@ export class Donation {
     mobile?: Nullable<string>;
     team?: Nullable<string>;
     message?: Nullable<string>;
-    created?: Nullable<DateTime>;
+    createdAt?: Nullable<DateTime>;
 }
 
 export abstract class IQuery {
