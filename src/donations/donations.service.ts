@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { Prisma } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateDonationInput } from './dto/create-donation.input';
 
@@ -11,10 +12,15 @@ export class DonationsService {
   }
 
   findAll() {
-    return this.prisma.donation.findMany();
+    return this.prisma.donation.findMany({
+      take: 10,
+      orderBy: { createdAt: 'desc' },
+    });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} donation`;
+  findOne(donationwhereUniqueInput: Prisma.DonationWhereUniqueInput) {
+    return this.prisma.donation.findUnique({
+      where: donationwhereUniqueInput,
+    });
   }
 }
