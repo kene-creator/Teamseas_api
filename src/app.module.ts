@@ -7,6 +7,7 @@ import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { DonationsModule } from './donations/donations.module';
 import { GraphQLDateTime } from 'graphql-iso-date';
+import { PrismaModule } from './prisma/prisma.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { GraphQLDateTime } from 'graphql-iso-date';
       resolvers: { DateTime: GraphQLDateTime },
     }),
     DonationsModule,
+    PrismaModule,
   ],
   controllers: [AppController],
   providers: [AppService],
