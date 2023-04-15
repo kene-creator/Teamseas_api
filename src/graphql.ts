@@ -38,12 +38,22 @@ export abstract class IQuery {
     abstract donations(orderBy?: Nullable<OrderByParams>): Nullable<Donation>[] | Promise<Nullable<Donation>[]>;
 
     abstract donation(id: number): Nullable<Donation> | Promise<Nullable<Donation>>;
+
+    abstract totalDonations(): number | Promise<number>;
 }
 
 export abstract class IMutation {
     abstract createDonation(createDonationInput: CreateDonationInput): Donation | Promise<Donation>;
 
     abstract removeDonation(id: number): Nullable<Donation> | Promise<Nullable<Donation>>;
+}
+
+export class Results {
+    total: number;
+}
+
+export abstract class ISubscription {
+    abstract totalUpdated(): Nullable<Results> | Promise<Nullable<Results>>;
 }
 
 export type DateTime = any;

@@ -27,4 +27,9 @@ export class DonationsResolver {
   findOne(@Args('id') id: number) {
     return this.donationsService.findOne({ id });
   }
+
+  @Query('totalDonations')
+  totalDonations() {
+    return this.donationsService.getTotal();
+  }
 }
