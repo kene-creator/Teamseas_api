@@ -20,6 +20,10 @@ import { PrismaModule } from './prisma/prisma.module';
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
       playground: false,
       resolvers: { DateTime: GraphQLDateTime },
+      subscriptions: {
+        'graphql-ws': true,
+        'subscriptions-transport-ws': true,
+      },
     }),
     DonationsModule,
     PrismaModule,
