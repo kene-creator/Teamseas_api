@@ -17,6 +17,7 @@ export class DonationsService {
     const { field = 'createdAt', direction = 'desc' } = orderBy || {};
     return this.prisma.donation.findMany({
       orderBy: { [field]: direction },
+      take: 10,
     });
   }
 
