@@ -2,11 +2,11 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { GraphQLModule } from '@nestjs/graphql';
+import { GraphQLModule, GraphQLISODateTime } from '@nestjs/graphql';
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { DonationsModule } from './donations/donations.module';
-import { GraphQLDateTime } from 'graphql-iso-date';
+// import { GraphQLDateTime } from 'graphql-iso-date';
 import { PrismaModule } from './prisma/prisma.module';
 
 @Module({
@@ -19,7 +19,7 @@ import { PrismaModule } from './prisma/prisma.module';
       typePaths: ['./**/*.graphql'],
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
       playground: false,
-      resolvers: { DateTime: GraphQLDateTime },
+      resolvers: { DateTime: GraphQLISODateTime },
       subscriptions: {
         'graphql-ws': true,
         'subscriptions-transport-ws': true,
