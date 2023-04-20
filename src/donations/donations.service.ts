@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
-import { OrderByParams } from 'src/graphql';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { OrderByParams } from '../graphql';
+import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class DonationsService {

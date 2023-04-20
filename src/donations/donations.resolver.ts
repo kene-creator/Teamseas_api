@@ -2,8 +2,8 @@ import { Resolver, Query, Mutation, Args, Subscription } from '@nestjs/graphql';
 import { HttpCode } from '@nestjs/common';
 import { DonationsService } from './donations.service';
 // import { Prisma } from '@prisma/client';
-import { OrderByParams } from 'src/graphql';
-import { DonationCreateInput } from 'src/@generated/prisma-nestjs-graphql/donation/donation-create.input';
+import { OrderByParams } from '../graphql';
+import { DonationCreateInput } from '../@generated/prisma-nestjs-graphql/donation/donation-create.input';
 import { PubSub } from 'graphql-subscriptions';
 
 const pubSub = new PubSub();
