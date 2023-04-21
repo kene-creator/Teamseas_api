@@ -22,7 +22,7 @@
     "start:debug": "nest start --debug --watch",
     "prisma-generate": "prisma generate --watch",
     "start:prod": "node dist/src/main.js",
-    "deploy": "npm install && npm run build && npm run prisma:dev:deploy",
+    "deploy": "npm install && npm run build && npm run prisma:dev:deploy && npx prisma db seed",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
